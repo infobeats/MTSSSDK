@@ -20,7 +20,7 @@ s.ios.deployment_target = '8.0'
 s.source       = { :git => "https://github.com/infobeats/MTSSSDK.git", :tag => s.version }
 
 
-s.vendored_frameworks = 'MTSSSDK/MTSSSecSDK.framework'
+s.vendored_frameworks = 'SDK/MTSSSecSDK.framework'
 
 
 end
