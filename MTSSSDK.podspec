@@ -22,6 +22,8 @@ s.source       = { :git => "https://github.com/infobeats/MTSSSDK.git", :tag => s
 
 s.vendored_frameworks = 'SDK/MTSSSecSDK.framework'
 
+s.resources =  'SDK/MTSSSecSDK.bundle'
+
 
 end
 

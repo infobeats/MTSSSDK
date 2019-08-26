@@ -96,7 +96,9 @@
 		DE1D3FAB230BE93B008CF101 /* HUDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1D3F55230BE93B008CF101 /* HUDManager.m */; };
 		DE1D3FAC230BE93B008CF101 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE1D3F56230BE93B008CF101 /* MBProgressHUD.bundle */; };
 		DE1D3FAD230BE93B008CF101 /* WXConfigTools.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1D3F58230BE93B008CF101 /* WXConfigTools.m */; };
-		DE48E423230FD5A900F8B3E4 /* MTSSSecSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE48E422230FD5A900F8B3E4 /* MTSSSecSDK.framework */; };
+		DE48E42C23137D2700F8B3E4 /* MTSSSecSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE48E42A23137D2700F8B3E4 /* MTSSSecSDK.framework */; };
+		DE48E42D23137D2700F8B3E4 /* MTSSSecSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE48E42B23137D2700F8B3E4 /* MTSSSecSDK.bundle */; };
+		DE48E42F2313808300F8B3E4 /* MTSSSecSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE48E42A23137D2700F8B3E4 /* MTSSSecSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -106,6 +108,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				DE48E42F2313808300F8B3E4 /* MTSSSecSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,7 +301,8 @@
 		DE1D3F56230BE93B008CF101 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		DE1D3F58230BE93B008CF101 /* WXConfigTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXConfigTools.m; sourceTree = "<group>"; };
 		DE1D3F59230BE93B008CF101 /* WXConfigTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXConfigTools.h; sourceTree = "<group>"; };
-		DE48E422230FD5A900F8B3E4 /* MTSSSecSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MTSSSecSDK.framework; path = MTSSSDK/MTSSSecSDK.framework; sourceTree = "<group>"; };
+		DE48E42A23137D2700F8B3E4 /* MTSSSecSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MTSSSecSDK.framework; sourceTree = "<group>"; };
+		DE48E42B23137D2700F8B3E4 /* MTSSSecSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MTSSSecSDK.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,7 +310,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE48E423230FD5A900F8B3E4 /* MTSSSecSDK.framework in Frameworks */,
+				DE48E42C23137D2700F8B3E4 /* MTSSSecSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +337,7 @@
 		CC843C371FF4855C0088C0B6 /* WXGZDemo */ = {
 			isa = PBXGroup;
 			children = (
-				DE48E422230FD5A900F8B3E4 /* MTSSSecSDK.framework */,
+				DE48E42923137D2700F8B3E4 /* SDK */,
 				DE1D3E90230BE93B008CF101 /* demo */,
 				CCA7973F200CD27900BCBFFB /* WXGZDemo.entitlements */,
 				CC843C381FF4855C0088C0B6 /* AppDelegate.h */,
@@ -785,6 +789,15 @@
 			path = WXConfigTools;
 			sourceTree = "<group>";
 		};
+		DE48E42923137D2700F8B3E4 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				DE48E42A23137D2700F8B3E4 /* MTSSSecSDK.framework */,
+				DE48E42B23137D2700F8B3E4 /* MTSSSecSDK.bundle */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -853,6 +866,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC843C421FF4855C0088C0B6 /* Assets.xcassets in Resources */,
+				DE48E42D23137D2700F8B3E4 /* MTSSSecSDK.bundle in Resources */,
 				CC843C401FF4855C0088C0B6 /* Main.storyboard in Resources */,
 				DE1D3F61230BE93B008CF101 /* WXTableViewCell.xib in Resources */,
 				DE1D3FA9230BE93B008CF101 /* LICENSE in Resources */,
@@ -1086,7 +1100,6 @@
 					"$(PROJECT_DIR)/WXGZDemo/WXGZ_SDK",
 					"$(PROJECT_DIR)/WXGZDemo/SDK",
 					"$(PROJECT_DIR)/SDK",
-					"$(PROJECT_DIR)/WXGZDemo/MTSSSDK",
 				);
 				INFOPLIST_FILE = WXGZDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1113,7 +1126,6 @@
 					"$(PROJECT_DIR)/WXGZDemo/WXGZ_SDK",
 					"$(PROJECT_DIR)/WXGZDemo/SDK",
 					"$(PROJECT_DIR)/SDK",
-					"$(PROJECT_DIR)/WXGZDemo/MTSSSDK",
 				);
 				INFOPLIST_FILE = WXGZDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
