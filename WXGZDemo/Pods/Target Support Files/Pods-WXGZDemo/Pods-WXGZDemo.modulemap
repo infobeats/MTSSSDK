@@ -1,0 +1,6 @@
+framework module Pods_WXGZDemo {
+  umbrella header "Pods-WXGZDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
