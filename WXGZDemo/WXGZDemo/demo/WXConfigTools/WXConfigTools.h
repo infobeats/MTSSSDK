@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-#define mtssAppkey @"MTSS_AppKey"
-#define mtssReportUrl @"MTSS_ReportUrl"
+#define mtssAppkey @"MTSS_AppKey1"
+#define mtssReportUrl @"MTSS_ReportUrl1"
+
 
 @interface WXConfigTools : NSObject
 
@@ -19,8 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSDictionary *)getDefaultConfig;
 + (NSDictionary *)getDefault2Config;
 
-+ (void)setDefaultConfig2:(BOOL)defualtConfig;
-+ (BOOL)isDefaultConfig2;
++ (void)setIsConfig1:(BOOL)Config1;
+
++ (BOOL)isConfig1;
 //保存appkey
 + (void)saveAppkey:(NSString *)appkey;
 //获取保存的appkey
@@ -31,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 //保存URL
 + (void)saveReportUrl:(NSString *)reportUrl;
 
-+ (void)clearCache;
+
 @end
 
 NS_ASSUME_NONNULL_END

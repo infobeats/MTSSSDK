@@ -39,7 +39,6 @@
 - (void)show
 {
     self.configView.frame = CGRectMake(0, 88, kHLScreenFrameWidth, kHLScreenFrameHeight);
-
     UIWindow *window = [self getApplicationWindow];
     [window addSubview:self];
 

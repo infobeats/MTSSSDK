@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -43,15 +43,15 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="82A-BV-MdZ" firstAttribute="centerY" secondItem="f7o-VJ-r0d" secondAttribute="centerY" id="86Z-Lv-3hA"/>
+                <constraint firstAttribute="trailing" secondItem="juV-EK-SsR" secondAttribute="trailing" constant="15" id="9vb-NR-uaT"/>
                 <constraint firstItem="fP7-iE-GIb" firstAttribute="centerY" secondItem="82A-BV-MdZ" secondAttribute="centerY" id="Ave-e0-duB"/>
-                <constraint firstItem="g89-Tc-Ljm" firstAttribute="leading" secondItem="fP7-iE-GIb" secondAttribute="trailing" constant="15" id="DGW-6r-5TI"/>
                 <constraint firstItem="82A-BV-MdZ" firstAttribute="leading" secondItem="f7o-VJ-r0d" secondAttribute="leading" constant="10" id="F3y-Cj-2ah"/>
                 <constraint firstItem="g89-Tc-Ljm" firstAttribute="centerX" secondItem="f7o-VJ-r0d" secondAttribute="centerX" constant="20" id="FLE-J5-hGS"/>
                 <constraint firstItem="g89-Tc-Ljm" firstAttribute="centerY" secondItem="82A-BV-MdZ" secondAttribute="centerY" id="IeI-E9-Uur"/>
                 <constraint firstItem="fP7-iE-GIb" firstAttribute="leading" secondItem="82A-BV-MdZ" secondAttribute="trailing" constant="10" id="JJa-2v-ezf"/>
                 <constraint firstItem="juV-EK-SsR" firstAttribute="leading" secondItem="g89-Tc-Ljm" secondAttribute="trailing" constant="10" id="NQo-rg-r9c"/>
                 <constraint firstItem="juV-EK-SsR" firstAttribute="centerY" secondItem="g89-Tc-Ljm" secondAttribute="centerY" id="d7u-Yp-E06"/>
-                <constraint firstAttribute="trailing" secondItem="juV-EK-SsR" secondAttribute="trailing" constant="15" id="laS-qQ-QYt"/>
+                <constraint firstItem="g89-Tc-Ljm" firstAttribute="leading" secondItem="fP7-iE-GIb" secondAttribute="trailing" constant="15" id="sIu-DV-nn6"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

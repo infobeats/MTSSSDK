@@ -39,11 +39,11 @@
         
         [self.btn1 setTitleColor:[UIColor colorWithRed:32/255.0 green:40/255.0 blue:49/255.0 alpha:1] forState:UIControlStateNormal];
         [self.btn1 setTitleColor:[UIColor colorWithRed:24/255.0 green:125/255.0 blue:228/255.0 alpha:1] forState:UIControlStateSelected];
-        [self.btn1 setTitle:@"外网环境" forState:UIControlStateNormal];
+        [self.btn1 setTitle:@"环境1" forState:UIControlStateNormal];
         
         [self.btn2 setTitleColor:[UIColor colorWithRed:32/255.0 green:40/255.0 blue:49/255.0 alpha:1] forState:UIControlStateNormal];
         [self.btn2 setTitleColor:[UIColor colorWithRed:24/255.0 green:125/255.0 blue:228/255.0 alpha:1] forState:UIControlStateSelected];
-        [self.btn2 setTitle:@"内网环境" forState:UIControlStateNormal];
+        [self.btn2 setTitle:@"环境2" forState:UIControlStateNormal];
         
         //监听键盘展示和隐藏的通知
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
@@ -64,7 +64,7 @@
         self.clearBtn.layer.masksToBounds = YES;
         
   
-        if ([WXConfigTools isDefaultConfig2]) {
+        if ([WXConfigTools isConfig1]) {
             [self clickbtn1:self.btn1];
         }else{
             [self clickbtn2:self.btn2];
@@ -75,24 +75,27 @@
 }
 - (IBAction)saveClick:(UIButton *)sender {
     
+  
+    if (self.btn1.isSelected) {
+        [WXConfigTools setIsConfig1:YES];
+    }else{
+        [WXConfigTools setIsConfig1:NO];
+    }
+    
     if (self.appkeyTf.text.length != 0) {
         [WXConfigTools saveAppkey:self.appkeyTf.text];
     }
     if (self.acceptidTf.text.length != 0) {
         [WXConfigTools saveReportUrl:self.acceptidTf.text];
     }
+    
     [HUDManager showTextHud:@"保存环境成功，重新启动后生效" afterDelay:1.4 onView:self completionBlock:^{
         exit(0);
     }];
-    if (self.btn1.isSelected) {
-        [WXConfigTools setDefaultConfig2:YES];
-    }else{
-        [WXConfigTools setDefaultConfig2:NO];
-    }
     
     
 }
-//其他地址
+//地址1
 - (IBAction)clickbtn1:(UIButton *)sender {
     if (sender.isSelected) {
         return;
@@ -104,17 +107,18 @@
          self.line2.backgroundColor = [UIColor colorWithRed:223/255.0 green:224/255.0 blue:224/255.0 alpha:1];
     }
     
-    self.appkeyTf.text = [WXConfigTools getAppkey];
-    self.acceptidTf.text = [WXConfigTools getReportUrl];
-    if (!self.appkeyTf.text.length || !self.acceptidTf.text.length ){
+
+    if ([WXConfigTools isConfig1]) {
+        self.appkeyTf.text = [WXConfigTools getAppkey];
+        self.acceptidTf.text = [WXConfigTools getReportUrl];
+    }else{
         NSDictionary *dic = [WXConfigTools getDefault2Config];
         self.appkeyTf.text = dic[@"appkey"];
         self.acceptidTf.text = dic[@"url"];
     }
-    
  }
 
-//默认地址
+// 地址2
 - (IBAction)clickbtn2:(UIButton *)sender {
     if (sender.isSelected) {
         return;
@@ -125,23 +129,23 @@
         self.line2.backgroundColor = [UIColor colorWithRed:25/255.0 green:128/255.0 blue:228/255.0 alpha:1];
          self.line1.backgroundColor = [UIColor colorWithRed:223/255.0 green:224/255.0 blue:224/255.0 alpha:1];
     }
-    NSDictionary *dic = [WXConfigTools getDefaultConfig];
-    self.appkeyTf.text = dic[@"appkey"];
-    self.acceptidTf.text = dic[@"url"];
+    if (![WXConfigTools isConfig1]) {
+        self.appkeyTf.text = [WXConfigTools getAppkey];
+        self.acceptidTf.text = [WXConfigTools getReportUrl];
+        if (self.appkeyTf.text.length == 0 || self.acceptidTf.text.length == 0) {
+            NSDictionary *dic = [WXConfigTools getDefaultConfig];
+            self.appkeyTf.text = dic[@"appkey"];
+            self.acceptidTf.text = dic[@"url"];
+        }
+    }else{      
+        NSDictionary *dic = [WXConfigTools getDefaultConfig];
+        self.appkeyTf.text = dic[@"appkey"];
+        self.acceptidTf.text = dic[@"url"];
+    }
 
 }
 
-- (IBAction)clearALLData:(UIButton *)sender {
-    [WXConfigTools clearCache];
-    self.appkeyTf.text = nil;
-    self.acceptidTf.text = nil;
-  
 
-    [HUDManager showTextHud:@"恢复初始参数成功，重新启动后生效" afterDelay:1.4 onView:self completionBlock:^{
-        exit(0);
-    }];
-    
-}
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     if ([self.firstResponderTextF isFirstResponder])[self.firstResponderTextF resignFirstResponder];

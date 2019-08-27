@@ -12,11 +12,11 @@
 #define mtssCurrentConfig2 @"mtssCurrentConfig2"
 
 @implementation WXConfigTools
-+ (void)setDefaultConfig2:(BOOL)defualtConfig
++ (void)setIsConfig1:(BOOL)Config1
 {
-    [userDef setBool:defualtConfig forKey:mtssCurrentConfig2];
+    [userDef setBool:Config1 forKey:mtssCurrentConfig2];
 }
-+ (BOOL)isDefaultConfig2
++ (BOOL)isConfig1
 {
     return [userDef boolForKey:mtssCurrentConfig2];
 }
@@ -32,7 +32,7 @@
              @"appkey":@"330ff568baf2f08eec81f009",
              @"url":@"http://172.10.4.104:8889",
              };
-    
+ 
 }
 + (NSDictionary *)getDefault2Config
 {
@@ -68,10 +68,6 @@
     return  [userDef valueForKey:mtssReportUrl];
 }
 
-+ (void)clearCache
-{
-    [userDef setValue:NULL forKey:mtssReportUrl];
-    [userDef setValue:NULL forKey:mtssAppkey];
-    [userDef synchronize];
-}
+
+
 @end
