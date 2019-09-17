@@ -7,5 +7,5 @@ target 'WXGZDemo' do
 
   # Pods for WXGZDemo
   pod 'MTSSSDK', '~> 2.0.0'
-  
+
 end
