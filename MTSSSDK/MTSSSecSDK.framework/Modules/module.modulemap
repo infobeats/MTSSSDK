@@ -1,6 +1,0 @@
-framework module MTSSSecSDK {
-  umbrella header "MTSSSecSDK.h"
-
-  export *
-  module * { export * }
-}
