@@ -5,7 +5,7 @@ DEPENDENCIES:
   - MTSSSDK (~> 2.0.0)
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - MTSSSDK
 
 SPEC CHECKSUMS:
