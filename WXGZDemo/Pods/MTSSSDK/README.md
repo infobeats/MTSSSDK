@@ -2,7 +2,7 @@
 
 SDK     | version | 日期
 ------- | ---------|---------
-iOS     | MTSSSDK 2.0.0 | 2019-9
+iOS     | MTSSSDK 2.0.1.1 | 2019-9
 
 #### 要求
 iOS8.0 和Xcode 9以上
