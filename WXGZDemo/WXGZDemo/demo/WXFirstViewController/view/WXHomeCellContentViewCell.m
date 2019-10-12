@@ -38,7 +38,20 @@
         NSString *title = obj.title;
         [btn setImage:image forState:UIControlStateNormal];
         [btn setTitle:title forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor colorWithRed:32/255.0 green:40/255.0 blue:49/255.0 alpha:1] forState:UIControlStateNormal];
+        UIColor *titleColor;
+        if (@available(iOS 13.0, *)) {
+           titleColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+                if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                                  return [UIColor labelColor];
+                              }
+                              return [UIColor colorWithRed:32/255.0 green:40/255.0 blue:49/255.0 alpha:1];
+            }];
+        } else {
+            // Fallback on earlier versions
+            titleColor = [UIColor colorWithRed:32/255.0 green:40/255.0 blue:49/255.0 alpha:1];
+        }
+        
+        [btn setTitleColor:titleColor forState:UIControlStateNormal];
         
         CGSize maxSize = CGSizeMake(itemW, MAXFLOAT);
         CGSize textSize = [self sizeWithString:title font:[UIFont systemFontOfSize:14] maxSize:maxSize];
@@ -49,7 +62,19 @@
         btn.titleEdgeInsets = UIEdgeInsetsMake(image.size.height + 8, - image.size.width, 0, 0);
         
         btn.frame = CGRectMake(X, Y, itemW, itemW);
-        btn.backgroundColor = [UIColor whiteColor];
+        
+        if (@available(iOS 13.0, *)) {
+            btn.backgroundColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+                if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                    return [UIColor systemGray2Color];
+                }
+                return [UIColor whiteColor];
+            }];
+        } else {
+            // Fallback on earlier versions
+            btn.backgroundColor = [UIColor whiteColor];
+        }
+        
         btn.tag = i;
         [btn addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
         [self.contentView addSubview:btn];

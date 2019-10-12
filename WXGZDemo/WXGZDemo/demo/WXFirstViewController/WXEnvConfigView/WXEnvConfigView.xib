@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -33,7 +31,6 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="Yaw-EU-8Yh"/>
                             </constraints>
-                            <nil key="textColor"/>
                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next"/>
                         </textField>
@@ -67,7 +64,6 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="fzA-3f-OW8"/>
                             </constraints>
-                            <nil key="textColor"/>
                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next"/>
                         </textField>
@@ -177,6 +173,8 @@
             <connections>
                 <outlet property="acceptidTf" destination="dUN-7V-HzR" id="1rd-WZ-tiW"/>
                 <outlet property="appkeyTf" destination="1bg-o4-tzm" id="yWz-UF-FKJ"/>
+                <outlet property="backView1" destination="dQs-zg-kaW" id="cDv-aA-AV5"/>
+                <outlet property="backView2" destination="RVQ-iH-SZV" id="5UZ-9j-tkM"/>
                 <outlet property="btn1" destination="OSV-Tp-c9q" id="guy-TE-qPW"/>
                 <outlet property="btn2" destination="Wr8-n8-sJD" id="X52-oS-fe6"/>
                 <outlet property="currentVersion" destination="0qD-gy-wCQ" id="G2d-YK-mOc"/>

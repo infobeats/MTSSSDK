@@ -77,8 +77,11 @@
 {
     [super viewDidLoad];
 
-    self.view.backgroundColor = [UIColor whiteColor];
-    
+    if (@available(iOS 13.0, *)) {
+        self.view.backgroundColor = [UIColor systemBackgroundColor];
+    } else {
+         self.view.backgroundColor = [UIColor colorWithRed:238/255.0 green:238/255.0 blue:238/255.0 alpha:1];
+    }
     self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
     
 }

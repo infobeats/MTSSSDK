@@ -29,7 +29,6 @@
     self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
     self.frame = kHLScreenFrame;
     self.configView = [[WXEnvConfigView alloc] init];
-    self.configView.backgroundColor = [UIColor whiteColor];
     self.configView.layer.cornerRadius = 24;
     self.configView.layer.masksToBounds = YES;
     [self addSubview:self.configView];

@@ -16,7 +16,10 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fP7-iE-GIb">
-                    <rect key="frame" x="46.5" y="35" width="98" height="30"/>
+                    <rect key="frame" x="46.5" y="35" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="W2A-S5-8TJ"/>
+                    </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
@@ -28,7 +31,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="juV-EK-SsR">
-                    <rect key="frame" x="210.5" y="35" width="94.5" height="30"/>
+                    <rect key="frame" x="210.5" y="35" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="kEr-KW-r25"/>
+                    </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
@@ -43,7 +49,6 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="82A-BV-MdZ" firstAttribute="centerY" secondItem="f7o-VJ-r0d" secondAttribute="centerY" id="86Z-Lv-3hA"/>
-                <constraint firstAttribute="trailing" secondItem="juV-EK-SsR" secondAttribute="trailing" constant="15" id="9vb-NR-uaT"/>
                 <constraint firstItem="fP7-iE-GIb" firstAttribute="centerY" secondItem="82A-BV-MdZ" secondAttribute="centerY" id="Ave-e0-duB"/>
                 <constraint firstItem="82A-BV-MdZ" firstAttribute="leading" secondItem="f7o-VJ-r0d" secondAttribute="leading" constant="10" id="F3y-Cj-2ah"/>
                 <constraint firstItem="g89-Tc-Ljm" firstAttribute="centerX" secondItem="f7o-VJ-r0d" secondAttribute="centerX" constant="20" id="FLE-J5-hGS"/>
@@ -51,7 +56,6 @@
                 <constraint firstItem="fP7-iE-GIb" firstAttribute="leading" secondItem="82A-BV-MdZ" secondAttribute="trailing" constant="10" id="JJa-2v-ezf"/>
                 <constraint firstItem="juV-EK-SsR" firstAttribute="leading" secondItem="g89-Tc-Ljm" secondAttribute="trailing" constant="10" id="NQo-rg-r9c"/>
                 <constraint firstItem="juV-EK-SsR" firstAttribute="centerY" secondItem="g89-Tc-Ljm" secondAttribute="centerY" id="d7u-Yp-E06"/>
-                <constraint firstItem="g89-Tc-Ljm" firstAttribute="leading" secondItem="fP7-iE-GIb" secondAttribute="trailing" constant="15" id="sIu-DV-nn6"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

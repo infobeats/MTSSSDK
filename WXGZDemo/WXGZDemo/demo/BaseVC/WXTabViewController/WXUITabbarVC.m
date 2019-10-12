@@ -38,15 +38,7 @@
     [vc1.tabBarItem setImage:[UIImage imageNamed:icon1]];
     [vc1.tabBarItem setSelectedImage:[[UIImage imageNamed:icon10] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
  
-    
-    WXSecondViewController *vc2 = [[WXSecondViewController alloc] init];
-    WXUINavigationController *na2 = [[WXUINavigationController alloc] initWithRootViewController:vc2];
-    vc2.tabBarItem.title = @"H5元素";
-    NSString *icon2 = @"h5";
-    NSString *icon20 = @"h5选中";
-    [vc2.tabBarItem setImage:[UIImage imageNamed:icon2]];
-    [vc2.tabBarItem setSelectedImage:[[UIImage imageNamed:icon20] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    
+
     
     self.viewControllers = [NSArray arrayWithObjects:na1, nil];
 

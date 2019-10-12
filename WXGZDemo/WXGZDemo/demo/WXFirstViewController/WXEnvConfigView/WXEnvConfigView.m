@@ -20,6 +20,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *btn2;
 @property (weak, nonatomic) IBOutlet UIView *line2;
 
+
+@property (weak, nonatomic) IBOutlet UIView *backView1;
+@property (weak, nonatomic) IBOutlet UIView *backView2;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topMargin2;
 
 @property (weak, nonatomic) IBOutlet UITextField *appkeyTf;
@@ -35,7 +39,7 @@
     if (self = [super init]) {
     
         self = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([WXEnvConfigView class]) owner:nil options:nil] lastObject];
-     
+ 
         
         [self.btn1 setTitleColor:[UIColor colorWithRed:32/255.0 green:40/255.0 blue:49/255.0 alpha:1] forState:UIControlStateNormal];
         [self.btn1 setTitleColor:[UIColor colorWithRed:24/255.0 green:125/255.0 blue:228/255.0 alpha:1] forState:UIControlStateSelected];
@@ -70,6 +74,43 @@
             [self clickbtn2:self.btn2];
         }
         self.currentVersion.text = [WXConfigTools getVersion];
+    
+        if (@available(iOS 13.0, *)) {
+            self.appkeyTf.textColor = [UIColor labelColor];
+            self.acceptidTf.textColor = [UIColor labelColor];
+            
+            self.appkeyTf.backgroundColor = [UIColor systemGray2Color];
+            self.acceptidTf.backgroundColor = [UIColor systemGray2Color];
+
+            self.currentVersion.backgroundColor = [UIColor systemBackgroundColor];
+            self.currentVersion.textColor = [UIColor labelColor];
+            [self.btn1 setBackgroundColor:[UIColor systemBackgroundColor]];
+            [self.btn1 setTitleColor:[UIColor labelColor] forState:UIControlStateNormal];
+            [self.btn2 setBackgroundColor:[UIColor systemBackgroundColor]];
+            [self.btn2 setTitleColor:[UIColor labelColor] forState:UIControlStateNormal];
+            self.backgroundColor = [UIColor systemBackgroundColor];
+            [self.saveBtn setBackgroundColor:[UIColor systemBackgroundColor]];
+            
+            [self.backView1 setBackgroundColor:[UIColor systemBackgroundColor]];
+            [self.backView2 setBackgroundColor:[UIColor systemBackgroundColor]];
+            
+            self.saveBtn.layer.backgroundColor = [UIColor systemGray2Color].CGColor;
+            
+            UIColor *oriColor = [UIColor colorWithRed:24.0/255 green:125/255.0 blue:228.0/255 alpha:1];
+            UIColor *backgroundColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * traitCollection) {
+                      if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                         return [UIColor systemGray2Color];
+                     }
+                     return oriColor;
+                 }];
+            [self.saveBtn setBackgroundColor:backgroundColor];
+            
+        } else {
+            // Fallback on earlier versions
+            self.currentVersion.backgroundColor = [UIColor whiteColor];
+            self.backgroundColor = [UIColor whiteColor];
+            
+        }
     }
     return self;
 }
@@ -95,6 +136,8 @@
     
     
 }
+
+
 //地址1
 - (IBAction)clickbtn1:(UIButton *)sender {
     if (sender.isSelected) {
@@ -198,4 +241,7 @@
         self.topMargin2.constant = 108;
     }
 }
+
+
+
 @end

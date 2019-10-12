@@ -17,8 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.view.backgroundColor = [UIColor colorWithRed:238/255.0 green:241/255.0 blue:244/255.0 alpha:1];
+    if (@available(iOS 13.0, *)) {
+        self.view.backgroundColor = [UIColor systemBackgroundColor];
+    } else {
+        self.view.backgroundColor = [UIColor colorWithRed:238/255.0 green:241/255.0 blue:244/255.0 alpha:1];
+    }
     [self addSubViewNum:99];
     
 }
@@ -42,10 +45,8 @@
     //计算宽度
     CGFloat scrW = [UIScreen mainScreen].bounds.size.width;
     CGFloat w = (scrW - Leftmargin - Rightmargin - middleMargin)/(lineNum *1.0);
-    
     //高度
     CGFloat segmentH = 48;
-    
     
     for (int i = 0; i < self.dataSource.count; i ++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -53,15 +54,27 @@
         NSString *title = [titleTag componentsSeparatedByString:@"-"].lastObject;
         [btn setTitle:title forState:UIControlStateNormal];
         btn.titleLabel.font = [UIFont systemFontOfSize:14];
-        [btn setTitleColor:[UIColor colorWithRed:32/255.0 green:40/255.0 blue:49/255.0 alpha:1] forState:UIControlStateNormal];
-        btn.backgroundColor = [UIColor whiteColor];
+        if (@available(iOS 13.0, *)) {
+            UIColor *btnBack = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+                 if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                       return [UIColor systemGray2Color];
+                   }
+                   return [UIColor whiteColor];
+                
+            }];
+            btn.backgroundColor = btnBack;
+            [btn setTitleColor:[UIColor labelColor] forState:UIControlStateNormal];
+        } else {
+            // Fallback on earlier versions
+            btn.backgroundColor = [UIColor whiteColor];
+            [btn setTitleColor:[UIColor colorWithRed:32/255.0 green:40/255.0 blue:49/255.0 alpha:1] forState:UIControlStateNormal];
+        }
         btn.layer.masksToBounds = YES;
         btn.layer.cornerRadius = 3;
         btn.tag = [[titleTag componentsSeparatedByString:@"-"].firstObject integerValue];
         [btn addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
         [btn setBackgroundImage:[UIImage imageWithColor:[UIColor grayColor]] forState:UIControlStateHighlighted];
         [btn setBackgroundImage:[UIImage imageWithColor:[UIColor grayColor]] forState:UIControlStateSelected];
-
         // 图片所在行
         NSInteger row = i / lineNum;
         // 图片所在列
@@ -72,10 +85,8 @@
         CGFloat picY = Topmargin + (segmentH + Topmargin) * row;
         // 图片的frame
         btn.frame = CGRectMake(picX, picY , w, segmentH);
- 
         self.tabViewContentH = picY + segmentH + Topmargin;
         [self.view addSubview:btn];
- 
     }
     
 }

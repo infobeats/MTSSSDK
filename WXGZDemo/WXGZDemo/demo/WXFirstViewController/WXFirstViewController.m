@@ -39,7 +39,11 @@
    
     [self.view addSubview:self.tabView];
      _dataSource2 =[WXItem getSection2].mutableCopy;
-    self.view.backgroundColor = WXBackColor;
+    if (@available(iOS 13.0, *)) {
+        self.view.backgroundColor = [UIColor systemBackgroundColor];
+    } else {
+         self.view.backgroundColor = WXBackColor;
+    }
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self testBaidu];
@@ -88,7 +92,11 @@
         
         _tabView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         _tabView.frame =  [UIScreen mainScreen].bounds;
-        _tabView.backgroundColor = WXBackColor;
+        if (@available(iOS 13.0, *)) {
+              _tabView.backgroundColor = [UIColor systemBackgroundColor];
+          } else {
+               _tabView.backgroundColor = WXBackColor;
+          }
         _tabView.dataSource = self;
         _tabView.delegate = self;
         _tabView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -109,7 +117,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     WXHomeCellContentViewCell *cell = [[WXHomeCellContentViewCell alloc] init];
-    cell.backgroundColor = WXBackColor;
+        if (@available(iOS 13.0, *)) {
+             cell.backgroundColor = [UIColor systemBackgroundColor];
+         } else {
+              cell.backgroundColor = WXBackColor;
+         }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     NSMutableArray *data = _dataSource2;
 
@@ -150,7 +162,19 @@
     NSString *title ;
   
     title  = @"工具";
-    NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:title attributes: @{NSFontAttributeName: [UIFont systemFontOfSize:20],NSForegroundColorAttributeName: [UIColor colorWithRed:32/255.0 green:40/255.0 blue:49/255.0 alpha:1.0]}];
+    UIColor *titleColor;
+    if (@available(iOS 13.0, *)) {
+        titleColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                return [UIColor labelColor];
+            }
+            return [UIColor colorWithRed:32/255.0 green:40/255.0 blue:49/255.0 alpha:1.0];
+        }];
+    } else {
+        // Fallback on earlier versions
+     titleColor = [UIColor colorWithRed:32/255.0 green:40/255.0 blue:49/255.0 alpha:1.0];
+    }
+    NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:title attributes: @{NSFontAttributeName: [UIFont systemFontOfSize:20],NSForegroundColorAttributeName:titleColor}];
     
     label.attributedText = string;
     label.textAlignment = NSTextAlignmentLeft;
@@ -158,7 +182,19 @@
     label.backgroundColor = [UIColor clearColor];
     CGRect frame = [UIScreen mainScreen].bounds;
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 28)];
-    view.backgroundColor = WXBackColor;
+//
+    if (@available(iOS 13.0, *)) {
+        
+        
+        view.backgroundColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                return [UIColor systemGray2Color];
+            }
+            return WXBackColor;
+        }];
+    } else {
+        view.backgroundColor = WXBackColor;
+    }
     [view addSubview:label];
     return view;
 }
