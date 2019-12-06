@@ -2,8 +2,8 @@
 //  MTSSSecSDK.h
 //  MTSSSecSDK
 //
-//  Created by 谭建中 on 3/6/2019.
-//  Copyright © 2019 谭建中. All rights reserved.
+//  Created by infobeat on 3/6/2019.
+//  Copyright © 2019 infobeat. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

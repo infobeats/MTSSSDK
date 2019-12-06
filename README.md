@@ -2,7 +2,7 @@
 
 SDK     | version | 日期
 ------- | ---------|---------
-iOS     | MTSSSDK 2.0.1.1 | 2019-9
+iOS     | MTSSSDK 1.2.0.0 | 2019-12
 
 #### 要求
 iOS8.0 和Xcode 10以上
@@ -28,7 +28,7 @@ AppKey为接入 SDK 的必要参数，参数值需要到管理平台去创建应
 ### （2）目录结构
 注：使用CocoaPods的用户可以通过如下方式集成：
 ```ruby
-pod 'MTSSSDK', '~> 2.0.0'
+pod 'MTSSSDK', '~> 1.2.0'
 ```
 
  注意（搜索之前在终端更新下pod）
@@ -41,7 +41,7 @@ Pod setup
   
 
 ## 三、 集成
- 把下载下来的SDK 包拖进工程内（包含: MTSSSecSDK.framework、MTSSSecSDK.bundle）
+ 把下载下来的SDK 包拖进工程内（包含: MTSSSecSDK.framework）
 
 ### （1）集成SDK
  在项目build phases如下图所示配置

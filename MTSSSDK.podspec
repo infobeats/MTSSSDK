@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
 
 
 s.name         = "MTSSSDK"
-s.version      = "2.0.1.1"
+s.version      = "1.2.0.0"
 s.summary      = "MTSSSDK for 威胁感知"
 
 s.description  = <<-DESC
@@ -21,8 +21,6 @@ s.source       = { :git => "https://github.com/infobeats/MTSSSDK.git", :tag => s
 
 
 s.vendored_frameworks = 'SDK/MTSSSecSDK.framework'
-
-s.resources =  'SDK/MTSSSecSDK.bundle'
 
 
 end
