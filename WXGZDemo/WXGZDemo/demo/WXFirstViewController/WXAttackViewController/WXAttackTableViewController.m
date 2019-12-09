@@ -56,7 +56,7 @@
     CGFloat segmentH = 48;
     
     for (int i = 0; i < self.dataSource.count; i ++) {
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+        UIButton *btn = [[UIButton alloc] init];
         NSString *titleTag = self.dataSource[i];
         NSString *title = [titleTag componentsSeparatedByString:@"-"].lastObject;
         [btn setTitle:title forState:UIControlStateNormal];
@@ -80,7 +80,11 @@
         btn.layer.cornerRadius = 3;
         btn.tag = [[titleTag componentsSeparatedByString:@"-"].firstObject integerValue];
         [btn addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [btn setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forState:UIControlStateNormal];
+
         [btn setBackgroundImage:[UIImage imageWithColor:[UIColor grayColor]] forState:UIControlStateHighlighted];
+
         [btn setBackgroundImage:[UIImage imageWithColor:[UIColor grayColor]] forState:UIControlStateSelected];
         // 图片所在行
         NSInteger row = i / lineNum;
@@ -99,6 +103,11 @@
 }
 - (void)clickBtn:(UIButton *)btn
 {
+    [btn setBackgroundImage:[UIImage imageWithColor:[UIColor grayColor]] forState:UIControlStateNormal];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [btn setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forState:UIControlStateNormal];
+    });
+
     [[NSNotificationCenter defaultCenter] postNotificationName:@"MTSSSecDetection" object:@(btn.tag)];
   
 }

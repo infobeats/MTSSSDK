@@ -39,8 +39,8 @@
 + (NSDictionary *)getDefault2Config
 {
     return @{
-             @"appkey":@"330ff568baf2f08e4336148c",
-             @"url":@"http://42.51.172.61:16666",
+             @"appkey":@"330ff568baf2f08e015ae6fb",
+             @"url":@"http://s1.infobeats.cn:16666",
              };
 }
 
