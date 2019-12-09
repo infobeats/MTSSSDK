@@ -7,6 +7,7 @@
 //
 
 #import "WXConfigTools.h"
+#pragma GCC diagnostic ignored "-Wundeclared-selector"
 
 #define userDef [NSUserDefaults standardUserDefaults]
 #define mtssCurrentConfig2 @"mtssCurrentConfig2"
@@ -14,11 +15,12 @@
 @implementation WXConfigTools
 + (void)setIsConfig1:(BOOL)Config1
 {
-    [userDef setBool:Config1 forKey:mtssCurrentConfig2];
+    [[NSUserDefaults standardUserDefaults] setBool:Config1 forKey:mtssCurrentConfig2];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 + (BOOL)isConfig1
 {
-    return [userDef boolForKey:mtssCurrentConfig2];
+    return [[NSUserDefaults standardUserDefaults] boolForKey:mtssCurrentConfig2];
 }
 + (NSString *)getVersion
 {
@@ -46,26 +48,28 @@
 + (void)saveAppkey:(NSString *)appkey
 {
     if (appkey.length) {
-        [userDef setValue:appkey forKey:mtssAppkey];
+        [[NSUserDefaults standardUserDefaults] setValue:appkey forKey:MTSSAPPKEY];
+         [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
 //获取保存的appkey
 + (NSString *)getAppkey
 {
-    return [userDef valueForKey:mtssAppkey];
+    return [[NSUserDefaults standardUserDefaults] valueForKey:MTSSAPPKEY];
 }
 
 //保存URL
 + (void)saveReportUrl:(NSString *)reportUrl
 {
     if (reportUrl.length) {
-        [userDef setValue:reportUrl forKey:mtssReportUrl];
+        [[NSUserDefaults standardUserDefaults] setValue:reportUrl forKey:MTSSREPORTURL];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
 //获取保存的URL
 + (NSString *)getReportUrl
 {
-    return  [userDef valueForKey:mtssReportUrl];
+    return  [[NSUserDefaults standardUserDefaults] valueForKey:MTSSREPORTURL];
 }
 
 

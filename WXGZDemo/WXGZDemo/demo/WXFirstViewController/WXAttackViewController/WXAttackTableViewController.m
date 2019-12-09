@@ -18,7 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     if (@available(iOS 13.0, *)) {
-        self.view.backgroundColor = [UIColor systemBackgroundColor];
+        UIColor *backcolor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                 return [UIColor systemBackgroundColor];
+             }
+             return [UIColor colorWithRed:238/255.0 green:241/255.0 blue:244/255.0 alpha:1];
+        }];
+        self.view.backgroundColor = backcolor;
+        
     } else {
         self.view.backgroundColor = [UIColor colorWithRed:238/255.0 green:241/255.0 blue:244/255.0 alpha:1];
     }
@@ -28,7 +35,7 @@
 - (NSArray *)dataSource
 {
     if (_dataSource == nil) {
-        _dataSource = @[@"201-注入攻击分析",@"202-调试攻击",@"203-位置欺诈分析",@"204-网络代理分析",@"205-设备复用分析",@"206-框架攻击分析",@"208-系统签名破坏分析",@"209-LIBC内核破坏分析",@"210-系统加速分析",@"211-设备信息篡改分析", @"212-敏感配置分析",@"213-域名风险分析", @"214-风险进程分析",@"215-恶意应用检测",
+        _dataSource = @[@"201-注入攻击分析",@"202-调试攻击",@"203-位置欺诈分析",@"204-网络代理分析",@"205-设备复用分析",@"206-框架攻击分析",@"208-系统签名破坏分析",@"209-LIBC内核破坏分析",@"210-系统加速分析",@"211-设备信息篡改分析", @"212-敏感配置分析",@"213-域名风险分析", @"214-风险进程分析",@"215-恶意应用检测",@"216-越狱检测",
             ];
     }
     return _dataSource;

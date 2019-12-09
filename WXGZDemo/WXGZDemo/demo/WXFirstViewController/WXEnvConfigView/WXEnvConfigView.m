@@ -79,8 +79,15 @@
             self.appkeyTf.textColor = [UIColor labelColor];
             self.acceptidTf.textColor = [UIColor labelColor];
             
-            self.appkeyTf.backgroundColor = [UIColor systemGray2Color];
-            self.acceptidTf.backgroundColor = [UIColor systemGray2Color];
+            UIColor *oriColor2 = [UIColor whiteColor];
+            UIColor *backColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+                if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                                       return [UIColor systemGray2Color];
+                                   }
+                                   return oriColor2;
+            }];
+            self.appkeyTf.backgroundColor = backColor;
+            self.acceptidTf.backgroundColor = backColor;
 
             self.currentVersion.backgroundColor = [UIColor systemBackgroundColor];
             self.currentVersion.textColor = [UIColor labelColor];
@@ -130,7 +137,7 @@
         [WXConfigTools saveReportUrl:self.acceptidTf.text];
     }
     
-    [HUDManager showTextHud:@"保存环境成功，重新启动后生效" afterDelay:1.4 onView:self completionBlock:^{
+    [HUDManager showTextHud:@"保存环境成功，重新启动后生效" afterDelay:2 onView:self completionBlock:^{
         exit(0);
     }];
     

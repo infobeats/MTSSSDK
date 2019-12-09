@@ -19,7 +19,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		778CD0599F7D24CBBB1DB0BC4F1CF14F /* Pods-WXGZDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F582E3B245BF78755EC2F32A17541C /* Pods-WXGZDemo-dummy.m */; };
+		778CD0599F7D24CBBB1DB0BC4F1CF14F /* Pods-WXGZDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F3BBA0D6CB65B81BBDD6290BB4E2CA /* Pods-WXGZDemo-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,16 +34,14 @@
 
 /* Begin PBXFileReference section */
 		01C0C22044C83385552CFD8F00DFB0DF /* libPods-WXGZDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-WXGZDemo.a"; path = "libPods-WXGZDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		264B1139DEB85CBE976369C5ABFBD773 /* MTSSSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MTSSSDK.xcconfig; sourceTree = "<group>"; };
-		372A2E5EBEA3FD28C59675A7ECDD9687 /* Pods-WXGZDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WXGZDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		81727C6DAF8755497B319A18674B8E54 /* MTSSSecSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MTSSSecSDK.framework; path = SDK/MTSSSecSDK.framework; sourceTree = "<group>"; };
-		900D62D570D627CEE110A8D88E7B4C06 /* Pods-WXGZDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WXGZDemo-resources.sh"; sourceTree = "<group>"; };
+		0645A6F3524E1B44A640822F12BEE0EC /* Pods-WXGZDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WXGZDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		0963095E5ECDD8607D8B73E74FC3906A /* MTSSSecSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MTSSSecSDK.framework; path = SDK/MTSSSecSDK.framework; sourceTree = "<group>"; };
+		164486B049D733D10482832EDEE9DE20 /* Pods-WXGZDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WXGZDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		8121D920A57BC6F2DBA1D27BE0955B27 /* MTSSSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MTSSSDK.xcconfig; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A4F582E3B245BF78755EC2F32A17541C /* Pods-WXGZDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WXGZDemo-dummy.m"; sourceTree = "<group>"; };
-		BFEB465D9AADDBE84A6C28A9451ECC43 /* Pods-WXGZDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WXGZDemo.release.xcconfig"; sourceTree = "<group>"; };
-		CBDABB763A92844670C2BEB3DA190BDF /* MTSSSecSDK.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = MTSSSecSDK.bundle; path = SDK/MTSSSecSDK.bundle; sourceTree = "<group>"; };
-		D16FC1843C83CB10D8E972FCC33F496B /* Pods-WXGZDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WXGZDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DE9E24E039145C8A4A5964D5C5420F78 /* Pods-WXGZDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WXGZDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		B9F3BBA0D6CB65B81BBDD6290BB4E2CA /* Pods-WXGZDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WXGZDemo-dummy.m"; sourceTree = "<group>"; };
+		D3AA3801964BA92344393D7B5A8E8377 /* Pods-WXGZDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WXGZDemo.release.xcconfig"; sourceTree = "<group>"; };
+		EE6AEAD04CD63ABE3640A50963A8B2B6 /* Pods-WXGZDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WXGZDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +55,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0EC8603476FAD7D118512FA1F3D83F4C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				81727C6DAF8755497B319A18674B8E54 /* MTSSSecSDK.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		510FE0362E4B9C5DB380D11CBC7129D3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,54 +63,52 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		705CB55917CA31434156CC49E77C327F /* Resources */ = {
+		5D961244F4F67C137D1E7F6871FEFE79 /* Pods-WXGZDemo */ = {
 			isa = PBXGroup;
 			children = (
-				CBDABB763A92844670C2BEB3DA190BDF /* MTSSSecSDK.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		764FAB3780F122050ED29F87311D269D /* MTSSSDK */ = {
-			isa = PBXGroup;
-			children = (
-				0EC8603476FAD7D118512FA1F3D83F4C /* Frameworks */,
-				705CB55917CA31434156CC49E77C327F /* Resources */,
-				CBB52EBD613B41DC7B1FEF50880D66FE /* Support Files */,
-			);
-			name = MTSSSDK;
-			path = MTSSSDK;
-			sourceTree = "<group>";
-		};
-		AA5C49127E393B441C8C0E55BFE0D174 /* Pods-WXGZDemo */ = {
-			isa = PBXGroup;
-			children = (
-				D16FC1843C83CB10D8E972FCC33F496B /* Pods-WXGZDemo-acknowledgements.markdown */,
-				DE9E24E039145C8A4A5964D5C5420F78 /* Pods-WXGZDemo-acknowledgements.plist */,
-				A4F582E3B245BF78755EC2F32A17541C /* Pods-WXGZDemo-dummy.m */,
-				900D62D570D627CEE110A8D88E7B4C06 /* Pods-WXGZDemo-resources.sh */,
-				372A2E5EBEA3FD28C59675A7ECDD9687 /* Pods-WXGZDemo.debug.xcconfig */,
-				BFEB465D9AADDBE84A6C28A9451ECC43 /* Pods-WXGZDemo.release.xcconfig */,
+				EE6AEAD04CD63ABE3640A50963A8B2B6 /* Pods-WXGZDemo-acknowledgements.markdown */,
+				0645A6F3524E1B44A640822F12BEE0EC /* Pods-WXGZDemo-acknowledgements.plist */,
+				B9F3BBA0D6CB65B81BBDD6290BB4E2CA /* Pods-WXGZDemo-dummy.m */,
+				164486B049D733D10482832EDEE9DE20 /* Pods-WXGZDemo.debug.xcconfig */,
+				D3AA3801964BA92344393D7B5A8E8377 /* Pods-WXGZDemo.release.xcconfig */,
 			);
 			name = "Pods-WXGZDemo";
 			path = "Target Support Files/Pods-WXGZDemo";
 			sourceTree = "<group>";
 		};
-		AD05F1709A7ABD7F69FAD8F56B831046 /* Pods */ = {
+		A62D2B8875FB3CA88811CFCDA4CF0B3C /* MTSSSDK */ = {
 			isa = PBXGroup;
 			children = (
-				764FAB3780F122050ED29F87311D269D /* MTSSSDK */,
+				C3F375A87E047CFAD43DD4E83C4A2088 /* Frameworks */,
+				AAAE98A69BA6047B6AFC1A6DB63DCA4E /* Support Files */,
 			);
-			name = Pods;
+			name = MTSSSDK;
+			path = MTSSSDK;
 			sourceTree = "<group>";
 		};
-		CBB52EBD613B41DC7B1FEF50880D66FE /* Support Files */ = {
+		AAAE98A69BA6047B6AFC1A6DB63DCA4E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				264B1139DEB85CBE976369C5ABFBD773 /* MTSSSDK.xcconfig */,
+				8121D920A57BC6F2DBA1D27BE0955B27 /* MTSSSDK.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/MTSSSDK";
+			sourceTree = "<group>";
+		};
+		C3F375A87E047CFAD43DD4E83C4A2088 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0963095E5ECDD8607D8B73E74FC3906A /* MTSSSecSDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9B2BF90E4609A03B47CDC75ED36FE51 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5D961244F4F67C137D1E7F6871FEFE79 /* Pods-WXGZDemo */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -128,9 +116,9 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
-				AD05F1709A7ABD7F69FAD8F56B831046 /* Pods */,
+				ED2E9EDA359216A81E105251C20623F1 /* Pods */,
 				510FE0362E4B9C5DB380D11CBC7129D3 /* Products */,
-				E9DCDF49794D80E8D556D219BE84C0E0 /* Targets Support Files */,
+				C9B2BF90E4609A03B47CDC75ED36FE51 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,12 +129,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E9DCDF49794D80E8D556D219BE84C0E0 /* Targets Support Files */ = {
+		ED2E9EDA359216A81E105251C20623F1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AA5C49127E393B441C8C0E55BFE0D174 /* Pods-WXGZDemo */,
+				A62D2B8875FB3CA88811CFCDA4CF0B3C /* MTSSSDK */,
 			);
-			name = "Targets Support Files";
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +183,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 510FE0362E4B9C5DB380D11CBC7129D3 /* Products */;
@@ -230,7 +219,7 @@
 /* Begin XCBuildConfiguration section */
 		12AD0B0AE8ADC04774644C649469C2F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 264B1139DEB85CBE976369C5ABFBD773 /* MTSSSDK.xcconfig */;
+			baseConfigurationReference = 8121D920A57BC6F2DBA1D27BE0955B27 /* MTSSSDK.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -303,7 +292,7 @@
 		};
 		7688654D344E33A16AD96B8E2097B814 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 264B1139DEB85CBE976369C5ABFBD773 /* MTSSSDK.xcconfig */;
+			baseConfigurationReference = 8121D920A57BC6F2DBA1D27BE0955B27 /* MTSSSDK.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -381,7 +370,7 @@
 		};
 		E087E75C1D176966D2D9C44575730505 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 372A2E5EBEA3FD28C59675A7ECDD9687 /* Pods-WXGZDemo.debug.xcconfig */;
+			baseConfigurationReference = 164486B049D733D10482832EDEE9DE20 /* Pods-WXGZDemo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -402,7 +391,7 @@
 		};
 		E4E6EF6B7E68F302D646391A39372EEC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BFEB465D9AADDBE84A6C28A9451ECC43 /* Pods-WXGZDemo.release.xcconfig */;
+			baseConfigurationReference = D3AA3801964BA92344393D7B5A8E8377 /* Pods-WXGZDemo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
