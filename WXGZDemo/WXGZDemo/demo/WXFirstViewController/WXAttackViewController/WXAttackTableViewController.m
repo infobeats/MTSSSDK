@@ -35,8 +35,7 @@
 - (NSArray *)dataSource
 {
     if (_dataSource == nil) {
-        _dataSource = @[@"201-注入攻击分析",@"202-调试攻击",@"203-位置欺诈分析",@"204-网络代理分析",@"205-设备复用分析",@"206-框架攻击分析",@"208-系统签名破坏分析",@"209-LIBC内核破坏分析",@"210-系统加速分析",@"211-设备信息篡改分析", @"212-敏感配置分析",@"213-域名风险分析", @"214-风险进程分析",@"215-恶意应用检测",@"216-越狱检测",
-            ];
+        _dataSource = @[@"201-注入攻击分析",@"202-调试攻击",@"203-位置欺诈分析",@"204-网络代理分析",@"205-设备复用分析",@"206-框架攻击Frida",@"208-系统签名破坏分析",@"209-LIBC内核破坏分析",@"210-系统加速分析",@"211-设备信息篡改分析", @"212-敏感配置分析",@"213-域名风险分析",@"214-风险进程分析",@"215-恶意应用分析",@"216-越狱检测",@"1001-访问www.baidu.com",@"1002-访问www.qq.com",@"1003-访问14.215.177.38"];
     }
     return _dataSource;
 }
@@ -107,8 +106,78 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [btn setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forState:UIControlStateNormal];
     });
+    
+    switch (btn.tag) {
+          case 1001:
+          {
+          // 访问百度
+              [self testBaidu];
+          }break;
+          case 1002:
+                  {
+          // 访问腾讯
+              [self testQQ];
+                  }break;
+          case 1003:
+                  {
+          // 访问114.114.114.114
+              [self testIP];
+                  }break;
+          default:
+              break;
+      }
+      
+      if (btn.tag > 1000) {
+          return;
+      }
 
     [[NSNotificationCenter defaultCenter] postNotificationName:@"MTSSSecDetection" object:@(btn.tag)];
   
+}
+
+
+
+
+- (void)testBaidu
+{
+ 
+        NSURL *url = [NSURL URLWithString:@"http://www.baidu.com"];
+ 
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+    //4.根据会话对象创建一个Task(发送请求）
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:req];
+    
+    //5.执行任务
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [dataTask resume];
+    });
+}
+- (void)testQQ
+{
+ 
+    NSURL *url = [NSURL URLWithString:@"http://www.qq.com"];
+    
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+    //4.根据会话对象创建一个Task(发送请求）
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:req];
+    
+    //5.执行任务
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [dataTask resume];
+    });
+}
+- (void)testIP {
+    NSURL *url = [NSURL URLWithString:@"http://14.215.177.38"];
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+    //4.根据会话对象创建一个Task(发送请求）
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:req];
+    
+    //5.执行任务
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [dataTask resume];
+    });
 }
 @end

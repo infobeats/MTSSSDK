@@ -45,38 +45,8 @@
          self.view.backgroundColor = WXBackColor;
     }
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self testBaidu];
-        [self testHttpsbaidu];
-    });
+   
     
-}
-- (void)testBaidu
-{
- 
-    NSURL *url = [NSURL URLWithString:@"https://www.qq.com"];
-     NSURLRequest *req = [NSURLRequest requestWithURL:url];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[NSOperationQueue mainQueue]];
-    //4.根据会话对象创建一个Task(发送请求）
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:req];
-    
-    //5.执行任务
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [dataTask resume];
-    });
-}
-- (void)testHttpsbaidu
-{
-    NSURL *url = [NSURL URLWithString:@"http://14.215.177.38"];
-    NSURLRequest *req = [NSURLRequest requestWithURL:url];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[NSOperationQueue mainQueue]];
-    //4.根据会话对象创建一个Task(发送请求）
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:req];
-    
-    //5.执行任务
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [dataTask resume];
-    });
 }
 
 - (void)addLeftItem
