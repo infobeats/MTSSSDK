@@ -1,11 +1,7 @@
 //
 //  MTSSSec.h
 //  MTSSSecSDK
-//
-//  Created by infobeat on 3/6/2019.
-//  Copyright © 2019 infobeat. All rights reserved.
-//
-
+ 
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
