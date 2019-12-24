@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
 
 
 s.name         = "MTSSSDK"
-s.version      = "1.2.0.1"
+s.version      = "1.2.0.2"
 s.summary      = "MTSSSDK for 威胁感知"
 
 s.description  = <<-DESC
