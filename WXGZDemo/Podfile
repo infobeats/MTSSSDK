@@ -6,6 +6,6 @@ target 'WXGZDemo' do
   #use_frameworks!
 
   # Pods for WXGZDemo
-  pod 'MTSSSDK', '~> 1.2.0.2'
+  pod 'MTSSSDK', '~> 1.2.0.3'
 
 end
